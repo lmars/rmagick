@@ -1797,7 +1797,7 @@ public
     # Ensure respond_to? answers correctly when we are delegating to Image
     alias_method :__respond_to__?, :respond_to?
     def respond_to?(methID, priv=false)
-        return true if __respond_to__?(methID, priv)
+        return true if super(methID, priv)
         if @scene
             @images[@scene].respond_to?(methID, priv)
         else
